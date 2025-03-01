@@ -13,8 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Create folder
-        run: |
-          mkdir -p myNewFolder/myNewSubFolder
-          ls myNewFolder/MyNewSubFolder
-          
+        
+      - name: Create directories
+        run: mkdir -p myNewFolder/myNewSubFolder
+
+      - name: List contents of myNewSubFolder
+        run: ls myNewFolder/myNewSubFolder
