@@ -3,8 +3,8 @@ name: Copy Files on Change
 on:
   push:
     paths:
-      - 'src/**'
-      - 'config/**'
+      - 'Ordner1\Test1\UCID1\ucid1.yml'
+      - 'Ordner1\Test1\UCID1\ucid2.yml'
 
 jobs:
   copy_files:
