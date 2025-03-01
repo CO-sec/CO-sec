@@ -3,7 +3,9 @@ name: Copy and Zip YAML Files
 on:
   push:
     paths:
-      - '**/*.yml'
+      - 'Ordner1\Test1\UCID1\ucid1.yml'
+      - 'Ordner1\Test1\UCID1\ucid2.yml'
+      - 'Ordner1\Test1\UCID1\ucid3.yml'
 
 jobs:
   copy_and_zip:
