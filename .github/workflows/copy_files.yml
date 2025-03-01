@@ -1,4 +1,4 @@
-name: Copy and Zip YAML Files
+name: copy_files
 
 on:
   push:
