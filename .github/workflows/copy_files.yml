@@ -22,6 +22,7 @@ jobs:
       run: |
         mkdir -p ATOMIC
         mkdir -p Ordner1/ATOMIC
+        mkdir -p /home/runner/work/CO-sec/CO-sec/ATOMIC
 
     - name: Copy YAML files to ATOMIC directory
       run: |
