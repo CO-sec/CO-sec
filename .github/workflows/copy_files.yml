@@ -38,6 +38,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
+        git config --global user.CO-sec 'github-actions[bot]'
+        git config --global user.Claudius.Ott@googlemail.com 'github-actions[bot]@users.noreply.github.com'
         git add ATOMIC.zip
         git commit -m "Add zipped ATOMIC directory"
         git push
