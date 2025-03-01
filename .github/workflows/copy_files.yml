@@ -1,26 +1,26 @@
-name: Copy Files on Change
+name: Copy and Zip YAML Files
 
 on:
   push:
     paths:
-      - 'Ordner1\Test1\UCID1\ucid1.yml'
-      - 'Ordner1\Test1\UCID1\ucid2.yml'
+      - '**/*.yml'
 
 jobs:
-  copy_files:
+  copy_and_zip:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Create backup directory
-      run: mkdir -p backup
+    - name: Create ATOMIC directory
+      run: mkdir -p ATOMIC
 
-    - name: Copy files to backup directory
-      run: |
-        cp -r src backup/
-        cp -r config backup/
+    - name: Copy YAML files to ATOMIC directory
+      run: cp **/*.yml ATOMIC/
 
-    - name: List files in backup directory
-      run: ls -R backup
+    - name: Zip the ATOMIC directory
+      run: zip -r ATOMIC.zip ATOMIC
+
+    - name: List files in ATOMIC.zip
+      run: unzip -l ATOMIC.zip
