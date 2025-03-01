@@ -24,8 +24,8 @@ jobs:
         cp Ordner1/Test1/UCID2/ucid2.yml ATOMIC/
         cp Ordner1/Test1/UCID3/ucid3.yml ATOMIC/
 
+    - name: Verify ATOMIC directory creation and contents
+      run: ls -l ATOMIC
+
     - name: Zip the ATOMIC directory
       run: zip -r ATOMIC.zip ATOMIC
-
-    - name: List files in ATOMIC.zip
-      run: unzip -l ATOMIC.zip
