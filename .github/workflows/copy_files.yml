@@ -19,7 +19,10 @@ jobs:
       run: mkdir -p ATOMIC
 
     - name: Copy YAML files to ATOMIC directory
-      run: cp **/*.yml ATOMIC/
+      run: |
+        cp Ordner1/Test1/UCID1/ucid1.yml ATOMIC/
+        cp Ordner1/Test1/UCID1/ucid2.yml ATOMIC/
+        cp Ordner1/Test1/UCID1/ucid3.yml ATOMIC/
 
     - name: Zip the ATOMIC directory
       run: zip -r ATOMIC.zip ATOMIC
