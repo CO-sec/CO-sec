@@ -1,0 +1,26 @@
+name: Copy Files on Change
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'config/**'
+
+jobs:
+  copy_files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Create backup directory
+      run: mkdir -p backup
+
+    - name: Copy files to backup directory
+      run: |
+        cp -r src backup/
+        cp -r config backup/
+
+    - name: List files in backup directory
+      run: ls -R backup
