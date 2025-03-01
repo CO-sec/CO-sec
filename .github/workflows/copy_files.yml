@@ -35,3 +35,11 @@ jobs:
 
     - name: Zip the ATOMIC directory
       run: zip -r ATOMIC.zip ATOMIC
+
+    - name: Commit and push changes
+      run: |
+        git add ATOMIC.zip
+        git commit -m "Add zipped ATOMIC directory"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
