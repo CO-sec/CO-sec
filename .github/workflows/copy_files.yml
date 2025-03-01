@@ -15,8 +15,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Print working directory
+      run: pwd
+
     - name: Create ATOMIC directory
-      run: mkdir -p ATOMIC
+      run: |
+        mkdir -p ATOMIC
+        mkdir -p Ordner1/ATOMIC
 
     - name: Copy YAML files to ATOMIC directory
       run: |
